@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showWeatherInfo(data);
     } catch (error) {
-    //   console.log(error.message);
+      //   console.log(error.message);
     }
   }
 
@@ -32,12 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
     //show main-section if city name is correct
     document.querySelector(".main-section").id = "";
     //Display the information in the website
-    let humidityElement = document.querySelector(".sub-info1 h2");
-    if (humidityElement) {
-      humidityElement.innerText = data.main.humidity + `%`;
-    } else{
-        console.log("humidity error");
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Place your code that manipulates the DOM here
+        const humidityElement = document.querySelector(".sub-info1 h2");
+        if (humidityElement) {
+          humidityElement.innerText = data.main.humidity + `%`;
+        } else {
+          console.log("humidity error");
+        }
+      });
     document.querySelector(".weather-info1 h1").innerText =
       data.main.temp + `°C`;
 
