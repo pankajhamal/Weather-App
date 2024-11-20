@@ -40,7 +40,11 @@ const showWeatherInfo = (data) => {
       console.log("humidity error");
     }
   });
-  document.querySelector(".weather-info1 h1").innerText = data.main.temp + `°C`;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".weather-info1 h1").innerText =
+      data.main.temp + `°C`;
+  });
 
   if (data.weather[0].main === "Clear") {
     document.querySelector(".weather-info1 img").src = "images/clear.png";
@@ -55,10 +59,12 @@ const showWeatherInfo = (data) => {
   } else if (data.weather[0].main === "Rain") {
     document.querySelector(".weather-info1 img").src = "images/rain.png";
   }
-  let locationName = document.querySelector(".search-box input").value;
-  document.querySelector(".weather-info1 h2").innerText = locationName;
-
-  document.querySelector(".sub-info2 h2").innerText = data.wind.speed + `km/h`;
+  document.addEventListener("DOMContentLoaded", function () {
+    let locationName = document.querySelector(".search-box input").value;
+    document.querySelector(".weather-info1 h2").innerText = locationName;
+    document.querySelector(".sub-info2 h2").innerText =
+      data.wind.speed + `km/h`;
+  });
 
   //For local storage
   saveWeatherData();
