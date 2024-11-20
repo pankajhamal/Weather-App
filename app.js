@@ -1,5 +1,3 @@
-document.addEventListener("DOMContentLoaded", () =>{
-
 
 const searchBox = document.querySelector(".search-box input");
 const searchBtn = document.querySelector("#search-btn");
@@ -126,4 +124,3 @@ function displayToggleBtn(){
 
 displayToggleBtn();
 
-});
