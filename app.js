@@ -23,6 +23,8 @@ async function getWeatherData(city) {
 }
 
 const showWeatherInfo = (data) => {
+
+    if(data && data.main && data.weather ){
   //show main-section if city name is correct
   document.querySelector(".main-section").id = "";
   //Display the information in the website
@@ -47,10 +49,12 @@ const showWeatherInfo = (data) => {
 
   document.querySelector(".sub-info2 h2").innerText = data.wind.speed + `km/h`;
 
+}
   //For local storage
   saveWeatherData();
 
 };
+
 
 function saveWeatherData(){
     let weatherInfo = document.querySelector(".main-section").innerHTML;
