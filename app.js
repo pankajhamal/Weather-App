@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+
   const searchBox = document.querySelector(".search-box input");
   const searchBtn = document.querySelector("#search-btn");
   const toggleBtn = document.querySelector(".toggle-btn i");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error(`Response status: ${response.status}`);
       }
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
 
       showWeatherInfo(data);
     } catch (error) {
@@ -24,15 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const showWeatherInfo = (data) => {
-    //show main-section if city name is correct
-    // document.querySelector(".main-section").id = "";
 
-    //Display the information in the website
-    document.querySelector(".sub-info1 h2").innerText =
-      data.main.humidity + `%`;
+    document.querySelector(".main-section").removeAttribute("id", "hide");
 
-    document.querySelector(".weather-info1 h1").innerText =
-      data.main.temp + `°C`;
+    document.querySelector(".sub-info1 h2").innerText=data.main.humidity + `%`;
+
+    document.querySelector(".weather-info1 h1").innerText=data.main.temp + `°C`;
 
     if (data.weather[0].main === "Clear") {
       document.querySelector(".weather-info1 img").src = "images/clear.png";
@@ -53,21 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".sub-info2 h2").innerText =
       data.wind.speed + `km/h`;
 
-    //For local storage
-    saveWeatherData();
+    // For local storage
+    // saveWeatherData();
   };
 
-  function saveWeatherData() {
-    let weatherInfo = document.querySelector(".main-section").innerHTML;
-    localStorage.setItem("weatherData", weatherInfo);
-  }
+//   function saveWeatherData() {
+//     let weatherInfo = document.querySelector(".main-section").innerHTML;
+//     localStorage.setItem("weatherData", weatherInfo);
+//   }
 
-  function displayData() {
-    document.querySelector(".main-section").id = "";
-    const savedWeatherData = localStorage.getItem("weatherData");
-    document.querySelector(".main-section").innerHTML = savedWeatherData;
-  }
-  displayData();
+//   function displayData() {
+//     document.querySelector(".main-section").id = "";
+//     const savedWeatherData = localStorage.getItem("weatherData");
+//     document.querySelector(".main-section").innerHTML = savedWeatherData;
+//   }
+//   displayData();
 
   searchBtn.addEventListener("click", () => {
     getWeatherData(searchBox.value);
@@ -125,4 +122,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   displayToggleBtn();
-});
