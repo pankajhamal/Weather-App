@@ -42,7 +42,6 @@ const showWeatherInfo = (data) => {
     document.querySelector(".weather-info1 img").src = "images/rain.png";
   }
   let locationName = document.querySelector(".search-box input").value;
-  console.log(locationName);
   document.querySelector(".weather-info1 h2").innerHTML = locationName;
 
   document.querySelector(".sub-info2 h2").innerText = data.wind.speed + `km/h`;
