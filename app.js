@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showWeatherInfo(data);
     } catch (error) {
-      console.log(error.message);
+    //   console.log(error.message);
     }
   }
 
