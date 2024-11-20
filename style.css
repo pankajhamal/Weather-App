@@ -164,9 +164,6 @@ body{
     font-weight: 600;
     color: var(--second-text-color);
 }
-#hide{
-    display: none;
-}
 
 /* Responsive Design  */
 @media(max-width: 650px){
