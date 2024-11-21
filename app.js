@@ -35,8 +35,11 @@ function showmainSection() {
           </div>
           <div class="weather-info1">
             <img src="images/clear.png" alt="" />
-            <h1>25°C</h1>
+            <div>
+             <h1>25°C</h1>
             <h2>Dhangadhi, Kailali</h2>
+            </div>
+           
           </div>
           <div class="info2">
             <img src="images/wind.png" alt="" />

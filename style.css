@@ -130,6 +130,11 @@ body {
   width: 180px;
   height: 170px;
 }
+.weather-info1{
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
 .info1 {
   display: flex;
   align-items: center;
@@ -180,7 +185,4 @@ h2 {
     padding-left: 10px;
     padding-right: 10px;
   }
-}
-#hide{
-  display: none;
 }
