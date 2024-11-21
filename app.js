@@ -96,7 +96,7 @@ function loadData() {
 loadData();
 
 searchBtn.addEventListener("click", () => {
-  getWeatherData(searchBox.value);
+  getWeatherData(searchBox.value.trim());
 });
 
 searchBox.addEventListener("keyup", function (event) {
