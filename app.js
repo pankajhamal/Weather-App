@@ -22,7 +22,38 @@ async function getWeatherData(city) {
   }
 }
 
+function showmainSection() {
+  const mainElement = document.querySelector(".main-section");
+
+  const html = `  <div class="sub-section">
+          <div class="info1">
+            <img src="images/humidity.png" alt="" />
+            <div class="sub-info1">
+              <h2>48%</h2>
+              <h3>Humidity</h3>
+            </div>
+          </div>
+          <div class="weather-info1">
+            <img src="images/clear.png" alt="" />
+            <h1>25°C</h1>
+            <h2>Dhangadhi, Kailali</h2>
+          </div>
+          <div class="info2">
+            <img src="images/wind.png" alt="" />
+            <div class="sub-info2">
+              <h2>11.13 km/h</h2>
+              <h3>Wind Speed</h3>
+            </div>
+          </div>
+        </div>`;
+
+    mainElement.innerHTML = html;
+}
+
 const showWeatherInfo = (data) => {
+
+  showmainSection();
+
   document.querySelector(".sub-info1 h2").innerText = data.main.humidity + `%`;
 
   document.querySelector(".weather-info1 h1").innerText = data.main.temp + `°C`;
